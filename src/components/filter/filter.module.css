@@ -1,0 +1,22 @@
+.form {
+    border-radius: 8px;
+    padding: 24px;
+    width: 408px;
+    height: 232px;
+    background-color: #fff;
+    margin: 10px;/* временно */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.select {
+    border: 1px solid #e1e3e6;
+    border-radius: 8px;
+    padding: 10px 16px;
+    width: 360px;
+    height: 40px;
+    &:focus {
+        border: 1px solid #f50;
+    }
+}

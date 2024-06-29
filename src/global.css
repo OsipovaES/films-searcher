@@ -1,0 +1,10 @@
+html,
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Roboto";
+  background-color: #ededed;
+  max-width: 1920px;
+  width: 100%;
+  scroll-behavior: smooth;
+}
