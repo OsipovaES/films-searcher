@@ -4,7 +4,6 @@ import styles from "./modal.module.css";
 import classNames from "classnames";
 
 export const Modal = ({ children, onClose }) => {
-  console.log(styles);
   return createPortal(
     <>
       <div
