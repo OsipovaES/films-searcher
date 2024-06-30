@@ -1,3 +1,8 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
 .card {
   display: flex;
   justify-content: space-between;
@@ -47,6 +52,7 @@
   margin: 0;
   width: 120px;
   height: 44px;
+  cursor: pointer;
 }
 
 .list {
@@ -56,4 +62,19 @@
 .head {
   display: flex;
   justify-content: space-between;
+}
+
+.actorsList {
+  display: flex;
+  gap: 20px;
+}
+
+.actorPhoto {
+  width: 160px;
+  height: 228px;
+  border-radius: 8px;
+}
+
+.actors {
+  padding: 20px;
 }

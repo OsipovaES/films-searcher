@@ -21,36 +21,54 @@ export const FilmPage = () => {
   }
 
   return (
-    <div className={styles.card}>
-      <div className={styles.data}>
-        <img className={styles.img} src={film.poster} />
-        <div>
-          <div className={styles.head}>
-            <h2 className={styles.title}>{film.title}</h2>
-            <p className={styles.mark}>
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <EmptyStar />
-            </p>
+    <div className={styles.main}>
+      <div className={styles.card}>
+        <div className={styles.data}>
+          <img className={styles.img} src={film.poster} />
+          <div>
+            <div className={styles.head}>
+              <h2 className={styles.title}>{film.title}</h2>
+              <p className={styles.mark}>
+                <Star />
+                <Star />
+                <Star />
+                <Star />
+                <EmptyStar />
+              </p>
+            </div>
+            <ul className={styles.ul}>
+              <li>
+                <span className={styles.list}>Жанр:</span> {film.genre}
+              </li>
+              <li>
+                <span className={styles.list}>Год выпуска:</span>{" "}
+                {film.release_year}
+              </li>
+              <li>
+                <span className={styles.list}>Рейтинг:</span> {film.rating}
+              </li>
+              <li>
+                <span className={styles.list}>Описание:</span> <br />
+                {film.description}
+              </li>
+            </ul>
           </div>
-          <ul className={styles.ul}>
-            <li>
-              <span className={styles.list}>Жанр:</span> {film.genre}
-            </li>
-            <li>
-              <span className={styles.list}>Год выпуска:</span>{" "}
-              {film.release_year}
-            </li>
-            <li>
-              <span className={styles.list}>Рейтинг:</span> {film.rating}
-            </li>
-            <li>
-              <span className={styles.list}>Описание:</span> <br />
-              {film.description}
-            </li>
-          </ul>
+        </div>
+      </div>
+
+      <div className={styles.actors}>
+        <h2>Актеры</h2>
+        <div className={styles.actorsList}>
+          {film.actors.map((actor, index) => (
+            <p key={index}>
+              <img
+                src={actor.photo}
+                alt={actor.name}
+                className={styles.actorPhoto}
+              />
+              <p className={styles.actorName}>{actor.name}</p>
+            </p>
+          ))}
         </div>
       </div>
     </div>

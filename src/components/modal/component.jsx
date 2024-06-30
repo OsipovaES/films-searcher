@@ -2,8 +2,20 @@ import { createPortal } from "react-dom";
 import close from "../../img/close.svg";
 import styles from "./modal.module.css";
 import classNames from "classnames";
+import { useEffect, useState } from "react";
+import { UseLockScreen } from "../../hooks/useLockScreen";
 
 export const Modal = ({ children, onClose }) => {
+  const [shouldFixPage, setShouldFixPage] = useState(false);
+
+  UseLockScreen(shouldFixPage);
+  useEffect(() => {
+    setShouldFixPage(true);
+    return () => {
+      setShouldFixPage(false);
+    };
+  }, []);
+
   return createPortal(
     <>
       <div

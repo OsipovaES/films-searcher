@@ -1,27 +1,29 @@
 .head {
-    padding: 24px 32px;
-    height: 88px;
-    background: #333;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 24px 32px;
+  height: 88px;
+  background: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
 }
 
 .title {
-    font-weight: 700;
-    font-size: 32px;
-    color: #fff;
+  font-weight: 700;
+  font-size: 32px;
+  color: #fff;
 }
 
 .btn {
-    color: #fff;
-    border-radius: 8px;
-    padding: 8px 16px;
-    width: 72px;
-    height: 40px;
-    background-color: #f50;
-    border: none;
-    &:hover {
-        cursor: pointer;
-    }
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 72px;
+  height: 40px;
+  background-color: #f50;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
