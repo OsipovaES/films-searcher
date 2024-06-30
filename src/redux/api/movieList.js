@@ -20,16 +20,15 @@ export const movieListApi = createApi({
           page = 1,
           limit = 10,
         } = arg || {};
-        console.log("arg:", arg);
         return {
           url: "/api/v1/search",
           params: { title, genre, release_year, sort_by, order, page, limit },
         };
       },
       transformResponse: async (response) => {
-        console.log("response :>> ", response);
-        return await Promise.all(
+        const movies = await Promise.all(
           response.search_result.map(async (movie) => {
+            console.log("response :>> ", response);
             const imageBlob = await fetch(movie.poster).then((res) =>
               res.blob()
             );
@@ -46,6 +45,10 @@ export const movieListApi = createApi({
             };
           })
         );
+        return {
+          movies,
+          total: response.total_pages,
+        };
       },
     }),
   }),
