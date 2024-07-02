@@ -1,3 +1,25 @@
 .buttons {
   padding: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.btnArrow {
+  border-radius: 32px;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  &:active {
+    background-color: #ffffff9d;
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }

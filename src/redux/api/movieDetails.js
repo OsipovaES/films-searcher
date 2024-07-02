@@ -26,9 +26,6 @@ export const movieApi = createApi({
         };
       },
     }),
-    getMovieIds: builder.query({
-      query: () => "/movie",
-    }),
   }),
 });
 

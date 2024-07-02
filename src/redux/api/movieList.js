@@ -26,27 +26,8 @@ export const movieListApi = createApi({
         };
       },
       transformResponse: async (response) => {
-        const movies = await Promise.all(
-          response.search_result.map(async (movie) => {
-            console.log("response :>> ", response);
-            const imageBlob = await fetch(movie.poster).then((res) =>
-              res.blob()
-            );
-
-            const base64Image = await new Promise((resolve) => {
-              const reader = new FileReader();
-              reader.onloadend = () => resolve(reader.result);
-              reader.readAsDataURL(imageBlob);
-            });
-
-            return {
-              ...movie,
-              poster: base64Image,
-            };
-          })
-        );
         return {
-          movies,
+          movies: response.search_result,
           total: response.total_pages,
         };
       },

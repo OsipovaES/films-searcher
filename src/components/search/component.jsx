@@ -11,7 +11,6 @@ export const Search = () => {
       className={styles.search}
       onChange={(e) => {
         dispatch(setSearch(e.currentTarget.value));
-        console.log("e.currentTarget.value :>> ", e.currentTarget.value);
       }}
     />
   );
