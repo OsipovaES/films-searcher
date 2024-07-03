@@ -38,7 +38,7 @@ export const FilmList = () => {
   return (
     <div>
       {data?.movies.map((movie) => {
-        return <FilmCard filmId={movie.id} key={movie.id} />;
+        return <FilmCard film={movie} key={movie.id} />;
       })}
       <div className={styles.buttons}>
         <button

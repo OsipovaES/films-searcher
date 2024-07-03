@@ -12,17 +12,8 @@ export const movieApi = createApi({
     getMovieDetails: builder.query({
       query: (movieId) => `/api/v1/movie/${movieId}`,
       transformResponse: async (response) => {
-        const imageBlob = await fetch(response.poster).then((res) =>
-          res.blob()
-        );
-        const fileReader = new FileReader();
-        fileReader.readAsDataURL(imageBlob);
-        await new Promise((resolve) => (fileReader.onload = resolve));
-        const base64Image = fileReader.result;
-
         return {
           ...response,
-          poster: base64Image,
         };
       },
     }),

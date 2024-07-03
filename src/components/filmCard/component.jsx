@@ -1,18 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./film.module.css";
-import { useGetMovieDetailsQuery } from "../../redux/api/movieDetails";
 
-export const FilmCard = ({ filmId }) => {
-  const { data: film, isLoading, error } = useGetMovieDetailsQuery(filmId);
-
-  if (isLoading) {
-    return <div>Загрузка...</div>;
-  }
-
-  if (error) {
-    return <div>Ошибка при загрузке данных о фильме...</div>;
-  }
-
+export const FilmCard = ({ film }) => {
   return (
     <Link to={`/film/${film.id}`} className={styles.card}>
       <div className={styles.data}>
